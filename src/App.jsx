@@ -25,15 +25,17 @@ export default function App() {
       <Routes>
 
         {/* =================================
-            DEFAULT PAGE
+            DEFAULT LOGIN PAGE
+            /
         ================================= */}
         <Route
           path="/"
-          element={<Navigate to="/admin/login" replace />}
+          element={<AdminLogin />}
         />
 
         {/* =================================
             ADMIN LOGIN
+            /admin/login
         ================================= */}
         <Route
           path="/admin/login"
@@ -42,6 +44,7 @@ export default function App() {
 
         {/* =================================
             ADMIN PANEL
+            /admin
         ================================= */}
         <Route
           path="/admin"
@@ -51,7 +54,6 @@ export default function App() {
             </AdminProtectedRoute>
           }
         >
-
           {/* /admin */}
           <Route
             index
@@ -99,15 +101,14 @@ export default function App() {
             path="settings"
             element={<Settings />}
           />
-
         </Route>
 
         {/* =================================
-            UNKNOWN PAGE
+            UNKNOWN URL
         ================================= */}
         <Route
           path="*"
-          element={<Navigate to="/admin/login" replace />}
+          element={<Navigate to="/" replace />}
         />
 
       </Routes>
